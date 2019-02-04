@@ -12,9 +12,9 @@ const handleFormSubmit = function(event){
   event.preventDefault();
 
   const newRating = document.createElement('li')
-  newRating.textContent = `
-  Brand: ${event.target.brand.value}
-  Type: ${event.target.type.value}
+  newRating.innerHTML = `
+  Brand: ${event.target.brand.value}<br>
+  Type: ${event.target.type.value}<br>
   Rating: ${event.target.rating.value}
   `
   const ratingsList = document.querySelector('#ratings-list')
@@ -22,11 +22,14 @@ const handleFormSubmit = function(event){
 
   const formSubmit = document.querySelector('#tea-rating-form');
   formSubmit.reset();
+
+  newRating.classList.add("media-card");
+  newRating.classList.add("flex");
   console.dir(ratingsList);
 };
 
 const handleFormDelete = function(){
   const allItems = document.querySelector('#ratings-list');
   allItems.innerHTML='';
-  // console.dir(handleFormDelete);
+  console.dir(handleFormDelete);
 };
